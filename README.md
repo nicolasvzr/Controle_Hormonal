@@ -8,10 +8,10 @@ Este é um sistema web simples, desenvolvido com **Python e Flask**, para regist
 - Data da aplicação atual.
 - Período e tipo de período (dias ou semanas).
 - Cálculo automático da próxima aplicação.
-- Armazenamento local em `dados.json`.
+- Armazenamento local em JSON.
 - Exibição em tabela das aplicações registradas.
 
-## ✨ IA 
+## 🤖 IA 
 
 - O front-end foi gerado com o apoio da IA (ChatGPT) para facilitar o desenvolvimento.
 
@@ -27,9 +27,9 @@ Este é um sistema web simples, desenvolvido com **Python e Flask**, para regist
 projeto/
 │
 ├── app.py # Arquivo principal do Flask
-├── dados.json # Base de dados local
+├── dados.json # Base de dados local (armazenamento dos dados das aplicações)
 ├── templates/
-│ └── index.html # Interface do sistema
+│ └── index.html # Interface do sistema (frontend)
 ├── static/
 │ └── style.css # Estilização da aplicação
 └── README.md # Documentação do projeto
