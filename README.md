@@ -25,41 +25,48 @@ Este é um sistema web simples, desenvolvido com **Python e Flask**, para regist
 ## 📦 Estrutura do Projeto
 
 projeto/
+
 │
 ├── app.py # Arquivo principal do Flask
+
 ├── dados.json # Base de dados local (armazenamento dos dados das aplicações)
+
 ├── templates/
+
 │ └── index.html # Interface do sistema (frontend)
+
 ├── static/
-│ └── style.css # Estilização da aplicação
+
+| └── style.css # Estilização da aplicação
+
 └── README.md # Documentação do projeto
 
 
 ## 🖥️ Como Rodar o Projeto
 
 1. Clone este repositório:
-   git clone https://github.com/seu-usuario/nome-do-repo.git
-   cd nome-do-repo
+   - git clone https://github.com/seu-usuario/nome-do-repo.git
+   - cd nome-do-repo
 
 2. Crie e ative um ambiente virtual (opcional, mas recomendado):
-    python -m venv venv
-    venv\Scripts\activate     # Windows
+    - python -m venv venv
+    - venv\Scripts\activate     # Windows
 
 3. Instale as dependências:
-   pip install Flask
+   - pip install Flask
 
 4. Execute o aplicativo:
-   O codigo ja possui o comando para rodar o app, então só executar o arquivo > app.py
-   Caso não tenha o comando, execute o seguinte comando no terminal:
+   - O codigo ja possui o comando para rodar o app, então só executar o arquivo > app.py
+   - Caso não tenha o comando, execute o seguinte comando no terminal:
    python app.py
 
 5. Acesse no navegador:
-    http://127.0.0.1:5000/
+   - http://127.0.0.1:5000/
 
 📌 Observações
 - Certifique-se de que o arquivo dados.json exista. Caso contrário, o app cria automaticamente.
 
 - Datas devem ser inseridas no formato dd/mm/aaaa.
 
-👤 Autor
+## 👤 Autor
 Desenvolvido por Nicolas Vaz — sinta-se à vontade para contribuir ou fazer sugestões!
