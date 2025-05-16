@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Aplicação de Hormônios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+
+</head>
+<body>
+
+    <h1>Registro de Aplicações de Hormônio</h1>
+
+    {% if proxima %}
+    <div class="message">
+        Próxima aplicação salva para: <strong>{{ proxima }}</strong>
+    </div>
+    {% endif %}
+
+<form method="POST" action="{{ url_for('index') }}">
+    <label for="hormonio">Nome do Hormônio</label>
+    <input type="text" id="hormonio" name="hormonio" placeholder="Ex: Undecilato de Testosterona" required />
+
+    <label for="data_aplicacao">Data da Aplicação (dd/mm/aaaa)</label>
+    <input type="text" id="data_aplicacao" name="data_aplicacao" placeholder="25/04/2025" required />
+
+    <label for="periodo">Período para próxima aplicação</label>
+    <input type="number" id="periodo" name="periodo" min="1" placeholder="Ex: 12" required />
+
+    <label for="tipo_periodo">Tipo de Período</label>
+<select id="tipo_periodo" name="tipo_periodo" required>
+    <option value="dias">Dias</option>
+    <option value="semanas">Semanas</option>
+</select>
+
+    <button type="submit">Salvar Aplicação</button>
+</form>
+
+
+    <h2>Histórico de Aplicações</h2>
+
+    {% if historico %}
+    <table>
+        <thead>
+            <tr>
+                <th>Hormônio</th>
+                <th>Próxima Aplicação</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in historico %}
+            <tr>
+                <td>{{ item.hormonio }}</td>
+                <td>{{ item.proxima_aplicacao }}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('delete', index=loop.index0) }}" class="delete-form" onsubmit="return confirm('Deseja realmente deletar esta entrada?');">
+                        <button type="submit" class="delete-button">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Nenhuma aplicação registrada ainda.</p>
+    {% endif %}
+
+</body>
+</html>
